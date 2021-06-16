@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.o
-    rder(id: "DESC")
+    @posts = Post.order(id: "DESC")
   end
 
   # def new
@@ -12,5 +11,5 @@ class PostsController < ApplicationController
     Post.create(content: params[:content])
     redirect_to action: :index  # 追記する
   end
-  
+
 end
